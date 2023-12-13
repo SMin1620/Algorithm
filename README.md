@@ -1,2 +1,2 @@
 # Algorithm
-algorithm study
+algorithm Python, Java, SQL

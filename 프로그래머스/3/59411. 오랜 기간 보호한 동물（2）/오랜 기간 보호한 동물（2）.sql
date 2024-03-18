@@ -1,0 +1,14 @@
+SELECT A.ANIMAL_ID
+    , A.NAME
+FROM (
+        SELECT B.ANIMAL_ID
+            , B.NAME
+            , TRUNC(C.DATETIME) - TRUNC(B.DATETIME) AS DATETIME
+        FROM ANIMAL_INS B
+            , ANIMAL_OUTS C
+        WHERE 1=1
+            AND B.ANIMAL_ID = C.ANIMAL_ID
+        ORDER BY DATETIME DESC
+    ) A
+WHERE ROWNUM <= 2
+;
